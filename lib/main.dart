@@ -1,5 +1,7 @@
-// ignore: deprecated_member_use
 import 'package:flutter/material.dart';
+import 'src/modules/history/page/history_page.dart';
+import 'src/modules/home/page/home_page.dart';
+import 'src/modules/initial/page/initial_page.dart';
 import 'src/routes/app_routes.dart';
 import 'src/shared/colors/app_colors.dart';
 import 'src/shared/storage/hive_config.dart';
@@ -27,9 +29,9 @@ class FastLocationApp extends StatelessWidget {
       ),
       initialRoute: AppRoutes.initial,
       routes: {
-        AppRoutes.initial: (context) => const Scaffold(
-              body: Center(child: Text('FastLocation - Base Configurada')),
-            ),
+        AppRoutes.initial: (context) => const InitialPage(),
+        AppRoutes.home: (context) => const HomePage(),
+        AppRoutes.history: (context) => const HistoryPage(),
       },
     );
   }
